@@ -1,3 +1,4 @@
+import moment from 'moment'
 import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } from '../../actions/filters'
 
 
@@ -34,16 +35,18 @@ test('should setup sorting with Date',() => {
     })
 })
 
-test('should setup setStartDate',() => {
-    const action = setStartDate()
+test('should generate set start Date Object',() => {
+    const action = setStartDate(moment(0))
     expect(action).toEqual({
-        type: 'SET_START_DATE'
+        type: 'SET_START_DATE',
+        startDate: moment(0)
     })
 })
 
-test('should setup setEndtDate',() => {
-    const action = setEndDate()
+test('should generate set End Date Object',() => {
+    const action = setEndDate(moment(1))
     expect(action).toEqual({
-        type: 'SET_END_DATE'
+        type: 'SET_END_DATE',
+        endDate:moment(1)
     })
 })
