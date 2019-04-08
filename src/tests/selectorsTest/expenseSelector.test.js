@@ -1,4 +1,4 @@
-import selectExpense from '../../selectors/expenses'
+import selectExpenses from '../../selectors/expenses'
 import moment from 'moment'
 
 const expenses = [
@@ -34,7 +34,7 @@ test('should filter by text',() => {
         startDate: undefined,
         endDate: undefined
     }
-    const result = selectExpense(expenses,filters)
+    const result = selectExpenses(expenses,filters)
     expect(result).toEqual([expenses[2],expenses[1]])
 })
 
@@ -45,6 +45,7 @@ test('should filter by startDate',() => {
         startDate: moment(0),
         endDate: undefined
     }
-    const result = selectExpense(expenses, filters)
-    expect(result).toEqual([expenses[2],expenses[0]])
+    const result = selectExpenses(expenses, filters)
+    ex
 })
+
