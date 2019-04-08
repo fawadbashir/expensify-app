@@ -46,6 +46,6 @@ test('should filter by startDate',() => {
         endDate: undefined
     }
     const result = selectExpenses(expenses, filters)
-    ex
+    expect(result).toEqual([expenses[2],expenses[0]])
 })
 
