@@ -14,14 +14,14 @@ const expenses = [
         description: 'rent',
         note: '',
         amount: 109500,
-        createdAt: moment(0).subtract(4,'days')
+        createdAt: moment(0).subtract(4,'days').valueOf()
     },
     {
         id: '3',
         description: 'Credit Card',
         note: '',
         amount: 10950,
-        createdAt: moment(0).add(4,'days')
+        createdAt: moment(0).add(4,'days').valueOf()
     }
 ]
 
@@ -45,5 +45,6 @@ test('should filter by startDate',() => {
         startDate: moment(0),
         endDate: undefined
     }
-
+    const result = selectExpense(expenses, filters)
+    expect(result).toEqual([expenses[2],expenses[0]])
 })
