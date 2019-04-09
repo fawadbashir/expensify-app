@@ -29,9 +29,13 @@ test('should set sort By Date', () => {
 })
 
 test('should set Filter by text', () => {
-    const text = 'This is my filter'
-    const state = filtersReducer(undefined, {type: 'SET_TEXT_FILTER',text})
-    expect(state.text).toBe(text)
+    // const text = 'This is my filter'
+    const action = {
+        type:'SET_TEXT_FILTER',
+        text:'This is my filter'
+    }
+    const state = filtersReducer(undefined, action)
+    expect(state.text).toBe('This is my filter')
 })
 
 test('should set startDate filter', () => {
