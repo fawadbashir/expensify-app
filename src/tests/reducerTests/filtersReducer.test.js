@@ -42,10 +42,10 @@ test('should set startDate filter', () => {
     // const startDate = moment().startOf('month')
     const action = {
         type: 'SET_START_DATE',
-        startDate: moment()
+        startDate: moment(0)
     }
     const state = filtersReducer(undefined, action)
-    expect(state.startDate).toEqual(moment())
+    expect(state.startDate).toEqual(moment(0))
 })
 
 test('should set EndDate filter', () => {
