@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { editExpense,removeExpense } from '../actions/expenses'
 import ExpenseForm from './ExpenseForm'
 
-class EditExpensePage extends Component {
+export class EditExpensePage extends Component {
     onSubmit = (expense)=>{
         this.props.editExpense(this.props.expense.id,expense)
         this.props.history.push('/')
