@@ -5,14 +5,14 @@ import expenses from '../fixtures/expensesFixture'
 import { AddExpensePage } from "../../Components/AddExpensePage";
 expect.addSnapshotSerializer(createSerializer({mode: 'shallow'}))
 
-let onSubmit
+let addExpense
 let history
 let wrapper
 
 beforeEach(() =>{
-    onSubmit = jest.fn()
+    addExpense = jest.fn()
     history = { push : jest.fn() }
-    wrapper = shallow(<AddExpensePage onSubmit = {onSubmit} history = {history}/>)
+    wrapper = shallow(<AddExpensePage addExpense = {addExpense} history = {history}/>)
 })
 
 test('should render AddExpensePage correctly', () => {
@@ -21,5 +21,5 @@ test('should render AddExpensePage correctly', () => {
 
 test('should handle onSubmit' , () => {
     wrapper.find('ExpenseForm').prop('onSubmit')(expenses[2])
-    expect(onSubmit).toHaveBeenLastCalledWith(expenses[2])
+    expect(addExpense).toHaveBeenLastCalledWith(expenses[2])
 })
