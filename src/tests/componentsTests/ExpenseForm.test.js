@@ -1,10 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import moment from 'moment'
-// import {createSerializer} from 'enzyme-to-json';
-import expenses from './fixtures/expensesFixture'
-import  ExpenseForm  from '../Components/ExpenseForm'
-// expect.addSnapshotSerializer(createSerializer({mode: 'shallow'}))
+import {createSerializer} from 'enzyme-to-json';
+import expenses from '../fixtures/expensesFixture'
+import  ExpenseForm  from '../../Components/ExpenseForm'
+expect.addSnapshotSerializer(createSerializer({mode: 'shallow'}))
 
 
 test('should Render Expense Form correctly', () => {
@@ -84,4 +84,11 @@ test('should set new State on DateChange', () => {
     const wrapper = shallow(<ExpenseForm/>)
     wrapper.find('withStyles(SingleDatePicker)').prop('onDateChange')(now);
     expect(wrapper.state('createdAt')).toEqual(now)
+})
+
+test('should set calendar focus onChange', () => {
+    const focused = false
+    const wrapper = shallow(<ExpenseForm/>)
+    wrapper.find('withStyles(SingleDatePicker)').prop('onFocusChange')({focused})
+    expect(wrapper.state('calendarFocused')).toBe(focused)
 })
