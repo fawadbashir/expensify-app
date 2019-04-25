@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
-    "enzyme-to-json": "^3.3.5",
+    
     "express": "^4.16.4",
     "heroku": "^7.22.10",
     "moment": "^2.24.0",
@@ -19,7 +17,6 @@
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
-    "react-test-renderer": "^16.8.6",
     "redux": "^4.0.1",
     "uuidv4": "^2.0.0",
     "yarn": "^1.13.0"
@@ -40,7 +37,11 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/react-dates": "^17.1.5"
+    "@types/react-dates": "^17.1.5",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "enzyme-to-json": "^3.3.5",
+    "react-test-renderer": "^16.8.6"
   },
   "engines": {
     "node": "11.x"
