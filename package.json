@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    
     "express": "^4.16.4",
     "heroku": "^7.22.10",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",
+    "numeral": "^2.0.6",
     "raf": "^3.4.1",
     "react": "^16.8.4",
     "react-addons-shallow-compare": "^15.6.2",
