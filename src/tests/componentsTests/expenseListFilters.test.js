@@ -72,3 +72,4 @@ test('should handle Focus Change', () => {
     wrapper.find('withStyles(DateRangePicker)').prop('onFocusChange')('endDate')
     expect(wrapper.state('focusedInput')).toBe('endDate')
 })
+
