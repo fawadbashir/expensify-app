@@ -31,7 +31,7 @@ yarn-error.log*
 # Ignore all local history of files
 .history
 
-# src/
+src/*
 public/*
 build/static/css/*.map
 build/static/js/*.map
