@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "cross-env": "^5.2.0",
+    "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "firebase": "^5.10.1",
     "heroku": "^7.22.10",

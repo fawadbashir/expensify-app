@@ -9,6 +9,7 @@ import {startSetExpenses} from './actions/expenses'
 // import getVisibleExpenses from './selectors/expenses'
 import * as serviceWorker from './serviceWorker'
 import './firebase/firebase'
+require('dotenv').config() 
 
 const store = configureStore()
 
