@@ -6,17 +6,17 @@ import { EditExpensePage } from "../../Components/EditExpensePage"
 expect.addSnapshotSerializer(createSerializer({mode: 'shallow'}))
 
 let wrapper
-let removeExpense
+let startRemoveExpense
 let editExpense
 let history
 
 beforeEach(() => {
     editExpense = jest.fn()
-    removeExpense = jest.fn()
+    startRemoveExpense = jest.fn()
     history = { push : jest.fn() }
     wrapper = shallow(<EditExpensePage history = {history}
         editExpense = {editExpense}
-        removeExpense = {removeExpense}
+        startRemoveExpense = {startRemoveExpense}
         expense={expenses[1]} />)
 })
 
@@ -33,6 +33,6 @@ test('should handle onSubmit', () => {
 test('should handle onClick', () => {
     wrapper.find('button').simulate('click')
     expect(history.push).toHaveBeenCalledWith('/')
-    expect(removeExpense).toHaveBeenLastCalledWith({id : expenses[1].id})
+    expect(startRemoveExpense).toHaveBeenLastCalledWith({id : expenses[1].id})
 })
 
