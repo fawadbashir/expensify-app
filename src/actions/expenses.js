@@ -49,6 +49,7 @@ export const startEditExpense = (id, updates) => {
   return async (dispatch) => {
   await database.ref(`expenses/${id}`).update(updates)
    dispatch(editExpense(id, updates))
+   console.log(updates)
 
   }
 }
