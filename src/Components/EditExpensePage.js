@@ -54,9 +54,9 @@ const mapStateToProps = (state,props) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => 
-    ({startEditExpense: (expense) => dispatch(startEditExpense(expense)),
-        startRemoveExpense: (expense) => dispatch(startRemoveExpense({id : expense.id}))})
+const mapDispatchToProps = (dispatch) => ({
+    startEditExpense: (id,expense) => dispatch(startEditExpense(id,expense)),
+    startRemoveExpense: (expense) => dispatch(startRemoveExpense({id : expense.id}))})
 
 
 export default connect(mapStateToProps,mapDispatchToProps)(EditExpensePage)
