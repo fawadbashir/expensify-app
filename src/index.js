@@ -8,8 +8,10 @@ import {startSetExpenses} from './actions/expenses'
 // import {setTextFilter} from './actions/filters'
 // import getVisibleExpenses from './selectors/expenses'
 import * as serviceWorker from './serviceWorker'
-import './firebase/firebase'
+import { firebase } from './firebase/firebase'
+import { history } from './routers/AppRouter'
 require('dotenv').config() 
+
 
 const store = configureStore()
 
@@ -22,12 +24,31 @@ const store = configureStore()
 // const state = store.getState()
 // const visibleExpenses = getVisibleExpenses(state.expenses,state.filters)
 // console.log(visibleExpenses)
-
 ReactDOM.render(<h1>Loading...</h1>, document.getElementById('root'))
+let isRendered = false
+const renderApp = () => {
+    if (!isRendered) {
+        ReactDOM.render(<Provider store = {store}> <AppRouter/> </Provider>, document.getElementById('root'))
+        isRendered = true
+    }
 
-store.dispatch(startSetExpenses()).then(() => 
-ReactDOM.render(<Provider store = {store}> <AppRouter/> </Provider>, document.getElementById('root'))
-)
+
+
+}
+
+
+
+firebase.auth().onAuthStateChanged((user) => {
+    if(user) {
+        store.dispatch(startSetExpenses()).then(() => renderApp())
+        console.log('Login')
+       
+     
+    } if(!user) {
+        renderApp()
+        console.log('logout')
+    }    
+})    
 
 
 // // If you want your app to work offline and load faster, you can change
