@@ -10,7 +10,6 @@ import {Header} from '../Components/Header'
 import LoginPage from '../Components/LoginPage'
 
 export const history = createBrowserHistory()
-console.log(history)
 const AppRouter = () => (
 <BrowserRouter> 
     <div>

@@ -19,12 +19,11 @@ import { startLogout } from '../actions/auth'
 
 
 const mapDispatchToProps = (dispatch) => ({
-    startLogout : () => {
-        return dispatch(startLogout());
-    }
+    startLogout :   dispatch(startLogout())
+    
 })
 
     
 
 
-export default connect( mapDispatchToProps)(Header)
+export default connect(null, mapDispatchToProps)(Header)
