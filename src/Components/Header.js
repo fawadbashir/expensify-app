@@ -12,18 +12,19 @@ import { startLogout } from '../actions/auth'
     <NavLink activeClassName = 'active' to = '/create'>Add Expense </NavLink>   
     <NavLink  activeClassName = 'active' to = '/help'>Help</NavLink>   
     <button onClick = {props.startLogout}>LogOut</button>
+    <p>{props.name}</p>
     </header>
      )
      }
     
 
 
-const mapDispatchToProps = (dispatch) => ({
-    startLogout :   dispatch(startLogout())
+const mapDispatchToProps = () => ({
+    startLogout : startLogout()
     
 })
 
     
 
 
-export default connect(null, mapDispatchToProps)(Header)
+export default connect(mapDispatchToProps)(Header)

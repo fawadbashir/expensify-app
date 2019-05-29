@@ -6,7 +6,7 @@ import AddExpensePage from '../Components/AddExpensePage'
 import EditExpensePage from '../Components/EditExpensePage'
 import HelpPage from '../Components/HelpPage'
 import NotFoundPage from '../Components/NotFoundPage'
-import {Header} from '../Components/Header'
+import Header from '../Components/Header'
 import LoginPage from '../Components/LoginPage'
 
 export const history = createBrowserHistory()

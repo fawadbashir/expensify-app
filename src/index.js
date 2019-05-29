@@ -31,27 +31,25 @@ const renderApp = () => {
         ReactDOM.render(<Provider store = {store}> <AppRouter/> </Provider>, document.getElementById('root'))
         isRendered = true
     }
-
-
-
 }
 
 
-
 firebase.auth().onAuthStateChanged((user) => {
-    if(user) {
-        store.dispatch(startSetExpenses()).then(() => renderApp())
+    if (user) {
+        store.dispatch(startSetExpenses()).then(() => {
+            renderApp()
+
+            if (history.location.pathname === '/') {
+                history.push('/create')
+            }
+        })
         console.log('Login')
-        if(history.location.pathname === '/') {
-            history.push('/dashboard')
-        }
-       
-     
-    } if(!user) {
+
+    } else {
         renderApp()
-        console.log('logout')
         history.push('/')
-    }    
+        console.log('logout')
+    }
 })    
 
 
