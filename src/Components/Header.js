@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom'
 import { startLogout } from '../actions/auth'
 
  export const Header = (props) => {
-     console.log(props)
+    
      return(
         <header>
     <h1>Expensify</h1>   

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import {startLogin} from '../actions/auth'
 
 export const LoginPage = (props) => {
-   console.log(props)
+   
     return (
         <div><button onClick = {props.startLogin} >Login</button></div>
     )
