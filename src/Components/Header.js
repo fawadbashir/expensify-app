@@ -8,9 +8,9 @@ import { startLogout } from '../actions/auth'
      return(
         <header>
     <h1>Expensify</h1>   
-     <NavLink activeClassName = 'active' to = '/'>Home</NavLink>      
-    <NavLink activeClassName = 'active' to = '/create'>Add Expense </NavLink>   
-    <NavLink  activeClassName = 'active' to = '/help'>Help</NavLink>   
+     <NavLink activeClassName = 'is-active' to = '/dashboard'>Home</NavLink>      
+    <NavLink activeClassName = 'is-active' to = '/create'>Add Expense </NavLink>   
+    <NavLink  activeClassName = 'is-active' to = '/help'>Help</NavLink>   
     <button onClick = {props.startLogout}>LogOut</button>
     <p>{props.name}</p>
     </header>

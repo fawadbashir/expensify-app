@@ -40,3 +40,4 @@ build/static/js/*.map
 
 .env.test
 .env.development
+yarn.lock

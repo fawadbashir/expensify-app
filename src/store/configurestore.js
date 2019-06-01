@@ -16,8 +16,9 @@ export default () => {
             filters: filtersReducer,
             auth: authReducer
         }),
-        composeEnhancer(applyMiddleware(thunk))
-    );
+        compose(applyMiddleware(thunk),
+        window.devToolsExtension ? window.devToolsExtension() : f => f)
+    )
     return store
 
 }
