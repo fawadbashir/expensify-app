@@ -12,6 +12,7 @@ import {login, logout} from './actions/auth'
 require('dotenv').config() 
 
 
+
 const store = configureStore()
 
 ReactDOM.render(<h1>Loading...</h1>, document.getElementById('root'))

@@ -4,7 +4,7 @@ import expensesReducer from '../reducers/expenses';
 import filtersReducer from '../reducers/filters';
 import authReducer from '../reducers/auth'
 
-const composeEnhancer = window.__Redux_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+// const composeEnhancer = window.__Redux_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 
 export default () => {
