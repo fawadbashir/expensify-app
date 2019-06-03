@@ -53,7 +53,7 @@ test('should setup edit expense action object',() => {
 })
 
 test('should edit expense on firebase', (done) => {
-    const store = createMockStore({})
+    const store = createMockStore({auth: {uid : 'uid123'}})
 
     store.dispatch(startEditExpense('123abc',{note: 'hello'})).then(() => {
         const action = store.getActions()
@@ -62,7 +62,7 @@ test('should edit expense on firebase', (done) => {
             id: '123abc',
             updates: {note : 'hello'}
         })
-        return database.ref(`expenses/${action[0].id}`).update({note: 'hello'}).then(() => done())
+        return database.ref(`users/${uid}expenses/${action[0].id}`).update({note: 'hello'}).then(() => done())
     })
 })
 
