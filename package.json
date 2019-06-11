@@ -50,6 +50,6 @@
     "redux-mock-store": "^1.5.3"
   },
   "engines": {
-    "node": "11.x"
+    "node": "12.x"
   }
 }
