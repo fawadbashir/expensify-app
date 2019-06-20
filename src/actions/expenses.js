@@ -10,6 +10,7 @@ export const startAddExpense = (expenseData = {}) => {
   return async (dispatch,getState) => {
     
     const uid = getState().auth.uid
+    console.log(getState())
     const {
       description = "",
       note = "",
@@ -65,8 +66,9 @@ export const setExpenses = (expenses) => ({
   expenses
 })
 
-export const startSetExpenses = () => {
-  return   async (dispatch,getState) => {
+export const startSetExpenses = ()  => {
+  return async (dispatch,getState) => {
+    
     const uid = getState().auth.uid
       const snapshot = await database.ref(`users/${uid}/expenses`).once('value');
     const expenses = []
@@ -76,6 +78,7 @@ export const startSetExpenses = () => {
         ...childSnapshot.val()
       });
     })
+    console.log(expenses)
     dispatch(setExpenses(expenses));
     
   }
