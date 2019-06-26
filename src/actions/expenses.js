@@ -71,6 +71,7 @@ export const startSetExpenses = ()  => {
     
     const uid = getState().auth.uid
       const snapshot = await database.ref(`users/${uid}/expenses`).once('value');
+      console.log(snapshot.val())
     const expenses = []
     snapshot.forEach((childSnapshot) => {
       expenses.push({
