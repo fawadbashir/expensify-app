@@ -19,6 +19,8 @@ beforeEach((done) => {
     database.ref('expenses').set(expenseData).then(() => done())
 })
 
+const uid = '123thisismyuid'
+const defaultAuthState = {auth: { uid }}
 const createMockStore = configureMockStore([thunk])
 
 test('should setup remove expense action object', () =>{
@@ -30,7 +32,7 @@ test('should setup remove expense action object', () =>{
 })
 
 test('should remove expenses from firebase', (done) => {
-    const store = createMockStore({})
+    const store = createMockStore(defaultAuthState)
 
     store.dispatch(startRemoveExpense({id : '123abc'})).then(() => {
         const action = store.getActions()
@@ -53,7 +55,7 @@ test('should setup edit expense action object',() => {
 })
 
 test('should edit expense on firebase', (done) => {
-    const store = createMockStore({auth: {uid : 'uid123'}})
+    const store = createMockStore(defaultAuthState)
 
     store.dispatch(startEditExpense('123abc',{note: 'hello'})).then(() => {
         const action = store.getActions()
