@@ -4,7 +4,7 @@ import expensesReducer from '../reducers/expenses';
 import filtersReducer from '../reducers/filters';
 import authReducer from '../reducers/auth'
 
-// const composeEnhancer = window.__Redux_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 
 export default () => {
@@ -16,8 +16,8 @@ export default () => {
             filters: filtersReducer,
             auth: authReducer
         }),
-        compose(applyMiddleware(thunk),
-        window.devToolsExtension ? window.devToolsExtension() : f => f)
+        composeEnhancers(applyMiddleware(thunk))
+        
     )
     return store
 
