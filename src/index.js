@@ -1,3 +1,5 @@
+import '../node_modules/materialize-css/dist/js/materialize.min.js';
+import '../node_modules/materialize-css/dist/css/materialize.min.css';
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
@@ -19,7 +21,7 @@ ReactDOM.render(<h1>Loading...</h1>, document.getElementById('root'))
 let isRendered = false
 const renderApp = () => {
     if (!isRendered) {
-        ReactDOM.render(<Provider store = {store}> <AppRouter/> </Provider>, document.getElementById('root'))
+        ReactDOM.render(<div className = 'container'><Provider store = {store}> <AppRouter/> </Provider></div>, document.getElementById('root'))
         isRendered = true
     }
 }

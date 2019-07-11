@@ -12,7 +12,7 @@ export class AddExpensePage extends Component {
     render() {
         return (
             <div>
-                <h1>Add Expense</h1>
+                <h3>Add Expense</h3>
                 <ExpenseForm
                     onSubmit={this.onSubmit}
                 />

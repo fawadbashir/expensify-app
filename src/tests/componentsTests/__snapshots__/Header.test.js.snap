@@ -6,22 +6,19 @@ exports[`should render Header correctly 1`] = `
     Expensify
   </h1>
   <NavLink
-    activeClassName="active"
-    aria-current="page"
-    to="/"
+    activeClassName="is-active"
+    to="/dashboard"
   >
     Home
   </NavLink>
   <NavLink
-    activeClassName="active"
-    aria-current="page"
+    activeClassName="is-active"
     to="/create"
   >
     Add Expense 
   </NavLink>
   <NavLink
-    activeClassName="active"
-    aria-current="page"
+    activeClassName="is-active"
     to="/help"
   >
     Help
@@ -31,5 +28,6 @@ exports[`should render Header correctly 1`] = `
   >
     LogOut
   </button>
+  <p />
 </header>
 `;

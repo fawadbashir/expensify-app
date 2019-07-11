@@ -3,28 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react-dates": "^17.1.5",
     "cross-env": "^5.2.0",
     "dotenv": "^8.0.0",
-    "express": "^4.16.4",
-    "firebase": "^5.10.1",
-    "heroku": "^7.22.10",
+    "express": "^4.17.1",
+    "firebase": "^6.2.4",
+    "heroku": "^7.26.2",
     "history": "^4.9.0",
+    "materialize-css": "^1.0.0",
     "moment": "^2.24.0",
-    "node-sass": "^4.11.0",
     "numeral": "^2.0.6",
     "raf": "^3.4.1",
-    "react": "^16.8.4",
+    "react": "^16.8.6",
     "react-addons-shallow-compare": "^15.6.2",
-    "react-dates": "^20.0.0",
-    "react-dom": "^16.8.4",
-    "react-modal": "^3.8.1",
-    "react-redux": "^7.0.3",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.1",
-    "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0",
-    "uuidv4": "^2.0.0",
-    "yarn": "^1.13.0"
+    "react-dates": "^20.2.5",
+    "react-dom": "^16.8.6",
+    "react-modal": "^3.8.2",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,21 +34,23 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
-    "@types/react-dates": "^17.1.5",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
     "react-test-renderer": "^16.8.6",
     "redux-mock-store": "^1.5.3"
-  },
-  "engines": {
-    "node": "12.x"
   }
 }

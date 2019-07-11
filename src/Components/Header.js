@@ -1,16 +1,14 @@
 import React from 'react';
+import { dispatch } from 'redux'
 import { connect } from 'react-redux'
-import {NavLink} from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 import { startLogout } from '../actions/auth'
 
  export const Header = (props) => {
     
      return(
         <header>
-    <h1>Expensify</h1>   
-     <NavLink activeClassName = 'is-active' to = '/dashboard'>Home</NavLink>      
-    <NavLink activeClassName = 'is-active' to = '/create'>Add Expense </NavLink>   
-    <NavLink  activeClassName = 'is-active' to = '/help'>Help</NavLink>   
+    <Link to = '/dashboard'><h5>Expensify</h5></Link>
     <button onClick = {props.startLogout}>LogOut</button>
     <p>{props.name}</p>
     </header>
@@ -19,12 +17,12 @@ import { startLogout } from '../actions/auth'
     
 
 
-const mapDispatchToProps = () => ({
-    startLogout : startLogout()
+const mapDispatchToProps = (dispatch) => ({
+    startLogout : () => dispatch(startLogout())
     
 })
 
     
 
 
-export default connect(mapDispatchToProps)(Header)
+export default connect(undefined,mapDispatchToProps)(Header)

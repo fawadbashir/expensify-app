@@ -5,11 +5,11 @@ import {startLogin} from '../actions/auth'
 export const LoginPage = (props) => {
    
     return (
-        <div><button onClick = {props.startLogin} >Login</button></div>
+        <div><button onClick = {props.startLogin()} >Login</button></div>
     )
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    startLogin: dispatch(startLogin())
+    startLogin: () => dispatch(startLogin())
 })
 export default connect(undefined,mapDispatchToProps)(LoginPage)
