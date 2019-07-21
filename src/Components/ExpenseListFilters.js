@@ -30,12 +30,18 @@ import { setTextFilter, sortByDate, sortByAmount,setStartDate,setEndDate } from 
     render() {
         return (
             <div>
-                <input type="text" value={this.props.filters.text} 
+                <input  type="text" value={this.props.filters.text} 
                     onChange={this.onTextChange} />
-                <select value={this.props.filters.sortBy} onChange={this.onSortBy}>
+                    <div>
+                <select  value={this.props.filters.sortBy} onChange={this.onSortBy}>
                     <option value="date">Date</option>
                     <option value="amount">Amount</option>
                 </select>
+                </div> 
+    
+                    
+                
+                {/* <h1>Hello</h1> */}
                 <DateRangePicker 
                 startDate = {this.props.filters.startDate}
                 startDateId = {'123abc'}

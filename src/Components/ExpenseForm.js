@@ -59,7 +59,9 @@ class ExpenseForm extends Component {
     }
     render() {
         return (
+            
             <div>
+                
                 {this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit = {this.onSubmit}>
                     <input
@@ -83,7 +85,7 @@ class ExpenseForm extends Component {
                         numberOfMonths={1}
                         isOutsideRange = {() => false}
 
-
+                        
                     />
                     <br />
 
@@ -93,6 +95,8 @@ class ExpenseForm extends Component {
                     <button>Save Expense</button>    
                 </form>
             </div>
+            
+            
         )
     }
 }

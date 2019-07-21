@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Typography from '@material-ui/core/Typography'
 import { connect } from 'react-redux'
 import ExpenseForm from './ExpenseForm'
 import { startAddExpense } from '../actions/expenses'
@@ -12,10 +13,13 @@ export class AddExpensePage extends Component {
     render() {
         return (
             <div>
-                <h3>Add Expense</h3>
+            {/* <Typography variant="h3" color="blue">Some text in here</Typography> */}
+               
+                <Typography variant = 'h3'>Add Expense</Typography>
                 <ExpenseForm
                     onSubmit={this.onSubmit}
                 />
+                
             </div>
         )
     }

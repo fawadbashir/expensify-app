@@ -1,10 +1,7 @@
-import '../node_modules/materialize-css/dist/js/materialize.min.js';
-import '../node_modules/materialize-css/dist/css/materialize.min.css';
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
 import AppRouter from './routers/AppRouter'
-import './App.scss'
 import configureStore from './store/configurestore'
 import {startSetExpenses} from './actions/expenses'
 import * as serviceWorker from './serviceWorker'
@@ -21,7 +18,7 @@ ReactDOM.render(<h1>Loading...</h1>, document.getElementById('root'))
 let isRendered = false
 const renderApp = () => {
     if (!isRendered) {
-        ReactDOM.render(<div className = 'container'><Provider store = {store}> <AppRouter/> </Provider></div>, document.getElementById('root'))
+        ReactDOM.render(<Provider store = {store}> <AppRouter/> </Provider>, document.getElementById('root'))
         isRendered = true
     }
 }

@@ -37,6 +37,7 @@ export const removeExpense = ({ id } = {}) => ({
   return async (dispatch,getState) => { 
     const uid = getState().auth.uid
  await database.ref(`users/${uid}/expenses/${id}`).remove()
+ console.log(database.ref(`users/${uid}`).child('admin'))
      dispatch(removeExpense({id}))
   }
 

@@ -5,12 +5,12 @@ import ExpenseListFilters from './ExpenseListFilters'
 import ExpensesSummary from './ExpensesSummary'
 const ExpenseDashboardPage = () => (
     <div>
-    This is my Dashboard Page
-    <ExpensesSummary/>
-   <Link to = '/create'><button className="btn blue btn-large">Add Expense</button></Link>
-    <ExpenseListFilters/>
-    <ExpenseList/>
-    
+        <ExpensesSummary />
+        <Link to='/create'><button >Add Expense</button></Link>
+        <ExpenseListFilters />
+        <ExpenseList />
+
+
     </div>
 )
 

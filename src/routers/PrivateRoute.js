@@ -5,7 +5,6 @@ import Header from '../Components/Header'
 
 
 export const PrivateRoute = ({ isAuthenticated, component: Component, ...rest }) => {
-    console.log(isAuthenticated)
     // const componentToRender = usertype => {
     //    if(usertype==='admin'){
     //        return <Admin></Admin>

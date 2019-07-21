@@ -10,7 +10,7 @@ export  const ExpensesSummary = (props) => {
     const expenseWord = expenseCount === 1 ? 'Expense' : 'Expenses'
     
     return(
-        <div><h1>Viewing {props.expenses.length} {expenseWord} of Total {Total}</h1>
+        <div><h4>Viewing {props.expenses.length} {expenseWord} of Total {Total}</h4>
             
         </div>
     )

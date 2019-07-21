@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import CssBaseline from '@material-ui/core/CssBaseline'
 import {Router,Route, Switch} from 'react-router-dom'
 import {createBrowserHistory} from 'history'
 import ExpenseDashboardPage from '../Components/ExpenseDashboardPage'
@@ -12,8 +13,8 @@ import PublicRoute from './PublicRoute'
 export const history = createBrowserHistory()
 const AppRouter = () => (
 <Router history = {history}> 
-    <div>
-    
+    <Fragment>
+    <CssBaseline/>
     <Switch>
     <PublicRoute path = "/"  exact = {true} component ={LoginPage}/>
     <PrivateRoute path = '/dashboard' component = {ExpenseDashboardPage} />
@@ -21,7 +22,7 @@ const AppRouter = () => (
     <PrivateRoute path = "/edit/:id" component ={EditExpensePage}/>
     <Route component = {NotFoundPage}/>
     </Switch>
-    </div>
+    </Fragment>
     </Router> 
 )
 
