@@ -1,30 +1,34 @@
 import React from 'react';
-// import { dispatch } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import Button from 'react-bootstrap/Button'
 import { startLogout } from '../actions/auth'
 
 export const Header = (props) => {
     console.log(props.name)
     return (
 
-        <div className="navbar-fixed">
-            <nav className='grey darken-3'>
-                <div className='container'>
-                    <div className="nav-wrapper">
-                        <Link to='/dashboard' className="brand-logo left">Logo</Link>
-                        <ul className="right">
-                            <li><button className='btn btn-flat white-text btn-large grey darken-3' onClick={props.startLogout}>Log Out</button></li>
+        <>
 
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            
-            <br/>
-            <br/>
-            
-        </div>
+            <Navbar variant='dark' bg='dark'>
+
+                <Link className='ml-lg-5' to='/dashboard'><Navbar.Brand >Expensify</Navbar.Brand></Link>
+                {/* <Navbar.Toggle aria-controls controls='basic-navbar-nav' />
+                <Navbar.Collapse id='basic-navbar-nav' /> */}
+                <Nav className='ml-auto'>
+
+                </Nav>
+
+
+                <Button className='' onClick={props.startLogout} variant='dark'>Logout</Button>
+            </Navbar>
+
+
+
+        </>
+
 
 
 

@@ -1,2 +1,3 @@
 @import '../src/styles/bas';
 @import './styles/_settings';
+@import './styles/componentStyles/_box-layout.scss'

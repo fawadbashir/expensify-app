@@ -1,14 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 import AppRouter from './routers/AppRouter'
 import configureStore from './store/configurestore'
-import {startSetExpenses} from './actions/expenses'
+import { startSetExpenses } from './actions/expenses'
 import * as serviceWorker from './serviceWorker'
 import { firebase } from './firebase/firebase'
 import { history } from './routers/AppRouter'
-import {login, logout} from './actions/auth'
-require('dotenv').config() 
+import { login, logout } from './actions/auth'
+import './styles/App.scss'
+
+require('dotenv').config()
+
 
 
 
@@ -18,7 +21,7 @@ ReactDOM.render(<h1>Loading...</h1>, document.getElementById('root'))
 let isRendered = false
 const renderApp = () => {
     if (!isRendered) {
-        ReactDOM.render(<Provider store = {store}> <AppRouter/> </Provider>, document.getElementById('root'))
+        ReactDOM.render(<Provider store={store}> <AppRouter /> </Provider>, document.getElementById('root'))
         isRendered = true
     }
 }
@@ -26,14 +29,14 @@ const renderApp = () => {
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        
-        store.dispatch(login(user.uid))            
+
+        store.dispatch(login(user.uid))
         store.dispatch(startSetExpenses()).then(() => {
             console.log(user.uid)
             renderApp()
             if (history.location.pathname === '/') {
                 history.push('/dashboard')
-                
+
             }
         })
         console.log('Login')
@@ -44,7 +47,7 @@ firebase.auth().onAuthStateChanged((user) => {
         history.push('/')
         console.log('logout')
     }
-})    
+})
 
 
 // // If you want your app to work offline and load faster, you can change
