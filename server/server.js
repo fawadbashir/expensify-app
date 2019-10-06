@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const app = express();
 const buildPath = path.join(__dirname, '..', 'build')
 console.log(__dirname)
